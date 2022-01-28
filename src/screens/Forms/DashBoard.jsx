@@ -1,39 +1,18 @@
 import React from "react";
-import { useNavigate } from "react-router";
-import Button from '../../Components/Button';
+import NavbarDash from "../../Components/Navbar/NavbarDash";
 
 
 const Dashboard = () => {
-  const navigate = useNavigate();
+  
 
   return (
     <>
+    <NavbarDash/>
     <div>
       <h1>DashBoard</h1>
     </div>
-    <div className="form">
-
-      <Button
-        title="Complaint "
-        onClick={() => {
-          navigate("/complain");
-        }}
-        />
-      
-      <Button
-        title="Crime Report"
-        onClick={() => {
-          navigate("/crimereport");
-        }}
-      />
-       <Button
-        title="Missing Person"
-        onClick={() => {
-          navigate("/missingreport");
-        }}
-      />
+    
         
-    </div>
     </>
 
   );

@@ -1,37 +1,11 @@
-import React from "react";
-import { useNavigate } from "react-router";
-import Button from '../Components/Button';
-
+import React from 'react';
+import Navbar from '../Components/Navbar/NavbarHome';
 
 const Home = () => {
-  const navigate = useNavigate();
-
-  return (
-    <>
-    <div>
-
-      <h1>Crime Control App</h1>
-    </div>
-    <div className="form">
-
-      <Button
-        title="ADMIN "
-        onClick={() => {
-          navigate("/adminLogin");
-        }}
-        />
+  return <div>
+      <Navbar/>
       
-      <Button
-        title="User"
-        onClick={() => {
-          navigate("/userRegister");
-        }}
-      />
-        
-    </div>
-    </>
-
-  );
+  </div>;
 };
 
 export default Home;

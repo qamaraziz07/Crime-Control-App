@@ -3,15 +3,15 @@ import {
   sendEmailVerification,
 } from "firebase/auth";
 import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router";
+import { useNavigate } from "react-router";
 import Button from "../../Components/Button";
 import Input from "../../Components/Input";
+import Navbar from "../../Components/Navbar/NavbarHome";
 import { auth } from "../../firebase";
 
 const RegisterUser = () => {
   const navigate = useNavigate();
 
-  const { id } = useParams();
 
   const [user, setUser] = useState({
     name:"",
@@ -30,22 +30,25 @@ const RegisterUser = () => {
       );
       await sendEmailVerification(auth.currentUser);
       const userID = userCredential.user.uid;
-      navigate(`/userlogin/${userID}.${id}`);
+      console.log(userID);
+      navigate('/login');
       console.log(userCredential);
     } catch (error) {
       console.log(error.message);
     }
   };
   function handleClick() {
-    navigate("/userlogin");
+    navigate("/login");
   }
   return (
+    <>
+    <Navbar/>
     <div className="form">
-      <h1>User Registration</h1>
+      <h1>Register</h1>
       <form onSubmit={handleSubmit}>
       <Input
           type="text"
-          placeholder="Name"
+          placeholder="Full Name"
           required={true}
           value={user.name}
           onChange={(value) => {
@@ -79,10 +82,27 @@ const RegisterUser = () => {
             }));
           }}
         />
-        <Button type="submit" title="Register"/>
+        {/* <select className="dropdown"> 
+           <option >City</option>
+           <option value="California">California</option>
+           <option value="Arizona">Arizona</option>
+           <option value="Colorado">Colorado</option>
+           <option value="Florida">Florida</option>
+           <option value="Georgia">Georgia</option>
+           <option value="NewJersey">NewJersey</option>
+           <option value="NewYork">NewYork</option>
+           <option value="SouthDakota">SouthDakota</option>
+           <option value="Washington">Washington</option>
+           <option value="Hawaii">Hawaii</option>
+        </select><br/> */}
+
+        <Button type="submit" title="SIGN UP"/>
       </form>
-        <Button type="submit" title="Login" onClick={handleClick}/>
+      <p>OR</p>
+          <p>Already have an account?</p>
+        <Button type="submit" title="LOGIN" onClick={handleClick}/>
     </div>
+    </>
   );
 };
 

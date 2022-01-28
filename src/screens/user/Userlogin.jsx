@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import Input from "../../Components/Input";
 import { auth } from "../../firebase";
 import Button from "../../Components/Button";
+import Navbar from "../../Components/Navbar/NavbarHome";
 
 const Userlogin = () => {
   const navigate = useNavigate();
@@ -20,18 +21,19 @@ const Userlogin = () => {
         user.email,
         user.password
       );
-
       const userID = userCredential.user.uid;
-      navigate(`/dashboard,${userID}`);
+      console.log(userID);
+      navigate('/dashboard');
       console.log(userCredential);
     } catch (error) {
       console.log(error.message);
     }
   };
   function handleClick() {
-    navigate("/userRegister");
+    navigate("/signup");
   }
-  return (
+  return (<>
+    <Navbar/>
     <div className="form">
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
@@ -57,12 +59,14 @@ const Userlogin = () => {
             }));
           }}
         />
-        <Button type="submit" title="Login" />
+        <Button type="submit" title="LOGIN" />
       </form>
-      
-      <Button type="submit" title="Register" onClick={handleClick}/>
+      <p>OR</p>
+      <p>Create Account</p>
+      <Button type="submit" title="SIGNUP" onClick={handleClick}/>
     
     </div>
+    </>
   );
 };
 

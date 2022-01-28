@@ -1,10 +1,78 @@
-body {
-  margin: 0;
-  padding: 0;
+* {
+  /* margin: 0;
+  padding: 0; */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.App {
+.nav {
+  /* position: fixed; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: dodgerblue;
+  /* height: 19vh; */
+  width: 100%;
+}
+.navMis {
+  /* position: fixed; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  /* height: 19vh; */
+  width: 100%;
+}
+.navCrime {
+  /* position: fixed; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: red;
+  /* height: 19vh; */
+  width: 100%;
+}
+.navComp {
+  /* position: fixed; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: seagreen;
+  /* height: 19vh; */
+  width: 100%;
+}
+.logo {
+  margin-left: 1rem;
+  color: white;
+  font-size: 30px;
+  font-weight: bolder;
+}
+.item {
+  display: flex;
+}
+.ul {
+  display: flex;
+  margin: 25px;
+}
+.li {
+  display: flex;
+  margin: 0 1rem;
+}
+a {
+  margin: 15px;
+  text-decoration: none;
+  color: azure;
+  font-weight: bolder;
+}
+
+/* body { */
+/* background-image: url(./Components/img/crime\ img.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh; */
+/* } */
+/* .App {
   text-align: center;
-}
+} */
 
 .input {
   width: 80%;
@@ -21,20 +89,27 @@ body {
 }
 
 .form {
-  background-color: darkslategrey;
+  /* background-color: dodgerblue; */
   padding: 8%;
   text-align: center;
   width: 35%;
-  box-shadow: 1px 2px 2px #f3f3f3;
-  border: 2px solid;
-  border-radius: 6px;
-  margin: 60px auto;
+  /* box-shadow: 1px 2px 2px #f3f3f3; */
+  /* border: 2px solid; */
+  /* border-radius: 6px; */
+  margin: 0px auto;
 }
 
 .btn {
-  width: 35%;
+  width: 30%;
   margin: 10px;
-  height: 60px;
+  height: 35%;
+  font-size: large;
+  padding: 3px 10px;
+}
+.dropdown {
+  width: 85%;
+  margin: 10px;
+  height: 37px;
   font-size: large;
   padding: 3px 10px;
 }
