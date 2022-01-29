@@ -82,20 +82,6 @@ const RegisterUser = () => {
             }));
           }}
         />
-        {/* <select className="dropdown"> 
-           <option >City</option>
-           <option value="California">California</option>
-           <option value="Arizona">Arizona</option>
-           <option value="Colorado">Colorado</option>
-           <option value="Florida">Florida</option>
-           <option value="Georgia">Georgia</option>
-           <option value="NewJersey">NewJersey</option>
-           <option value="NewYork">NewYork</option>
-           <option value="SouthDakota">SouthDakota</option>
-           <option value="Washington">Washington</option>
-           <option value="Hawaii">Hawaii</option>
-        </select><br/> */}
-
         <Button type="submit" title="SIGN UP"/>
       </form>
       <p>OR</p>

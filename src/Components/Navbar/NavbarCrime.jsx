@@ -13,10 +13,10 @@ const NavbarCrime = () => {
     <nav className="item">
       <ul className="ul">
       <li>
-        <Link to="/missing">REPORT CRIME</Link>
+        <Link to="/crimereport">REPORT CRIME</Link>
       </li>
       <li>
-        <Link to="/missing">VIEW CRIME</Link>
+        <Link to="/crimereportlist">VIEW CRIME</Link>
       </li>
       
       </ul>

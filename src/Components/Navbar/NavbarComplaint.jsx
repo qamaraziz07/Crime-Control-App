@@ -13,10 +13,10 @@ const NavbarComplaint = () => {
     <nav className="item">
       <ul className="ul">
       <li>
-        <Link to="/missing">REPORT COMPLAINTS</Link>
+        <Link to="/complaint">REPORT COMPLAINTS</Link>
       </li>
       <li>
-        <Link to="/missing">VIEW COMPLAINT</Link>
+        <Link to="/complaintlist">VIEW COMPLAINT</Link>
       </li>
       
       </ul>

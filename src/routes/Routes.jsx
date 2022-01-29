@@ -10,8 +10,10 @@ import Complaint from "../screens/Forms/Complaint";
 import ComplaintList from "../screens/Forms/ComplaintList";
 import Crimereport from "../screens/Forms/Crimereport";
 import CrimereportList from "../screens/Forms/CrimereportList";
+import CrimeDetails from "../screens/CrimeDetails";
 import Missingreport from "../screens/Forms/Missingreport";
 import MissingpersonList from"../screens/Forms/MissingpersonList"
+import MissingDetails from "../screens/MissingDetails";
 
 
 
@@ -30,8 +32,10 @@ const MainRoutes = () => {
       <Route path="/complaintlist" element={<ComplaintList/>}/>
       <Route path="/crimereport" element={<Crimereport/>}/>
       <Route path="/crimereportlist" element={<CrimereportList/>}/>
+      <Route path="/crimedetails" element={<CrimeDetails/>}/>
       <Route path="/missingreport" element={<Missingreport/>}/>
       <Route path="/missingpersonlist" element={<MissingpersonList/>}/>
+      <Route path="/missingdetails" element={<MissingDetails/>}/>
 
       
       
