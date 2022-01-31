@@ -145,3 +145,27 @@ nav ul li a:hover {
   margin-left: auto;
   margin-right: auto;
 }
+.missingDetail {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  border: 1px solid;
+  border-radius: 3px;
+  width: 400px;
+  margin: 10px;
+}
+.missingList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.singlemissing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

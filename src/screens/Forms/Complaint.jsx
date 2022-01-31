@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import Button from "../../Components/Button";
 import Input from "../../Components/Input";
-// import { useNavigate } from "react-router";
 import { db ,storage} from "../../firebase";
 import InputImage from "../../Components/InputImage";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
@@ -12,7 +11,6 @@ import NavbarComplaint from "../../Components/Navbar/NavbarComplaint"
 const Complaint = () => {
 
 
-  // const navigate = useNavigate();
   const [image, setImage] = useState("");
   const [complaintDetail, setComplaintDetail] = useState({
     name: "",
@@ -22,7 +20,7 @@ const Complaint = () => {
     complain:"",
   });
 
-
+console.log({complaintDetail});
   const fileUpload = async () => {
     return new Promise((resolve, reject) => {
       const fileRef = ref(storage, `Images/${Date.now() + image.name}`);
@@ -66,7 +64,7 @@ const Complaint = () => {
             ...complaintDetail,
             imageUrl: data,
           });
-          console.log("Document written with ID: ", docRef.id);
+          console.log("Document written with ID: ", docRef);
         })
         .catch((e) => {
           console.log(e);
@@ -84,7 +82,6 @@ const Complaint = () => {
       complain:"",
       
     }));
-    // navigate('/complaint');
     alert("Complaint Registered..")
   };
 
@@ -156,10 +153,30 @@ const Complaint = () => {
                 complain: value,
               }));
             }}
-          />
-        
-        
-        <Button type="submit" title="REGISTER" />
+          />  
+    <select 
+    value={complaintDetail.city}
+    onChange={(e) => {
+      setComplaintDetail((prev) => ({
+        ...prev,
+        city: e.target.value,
+      }));
+    }}
+    >
+            <option value="">Select city</option>
+      <option value="NewYork">New York</option>
+      <option value="California">California </option>
+      <option value="Alaska">Alaska </option>
+      <option value="Arizona">Arizona</option>
+      <option value="NewJersey">New Jersey</option>
+      <option value="Colorado">Colorado </option>
+      <option value="Florida">Florida </option>
+      <option value="Georgia">Georgia </option>
+      <option value="Hawaii">Hawaii</option>
+      <option value="NewMexico">New Mexico</option>
+</select>
+          <br/>
+        <Button type="submit" title="REGISTER COMPLAINT" />
       </form>
     </div>
   </>

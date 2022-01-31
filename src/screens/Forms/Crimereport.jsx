@@ -15,7 +15,7 @@ const Crimereport = () => {
     phone:"",
     date: "",
     city: "",
-    complain:"",
+    crime:"",
   });
 
 
@@ -62,7 +62,7 @@ const Crimereport = () => {
             ...crimeDetail,
             imageUrl: data,
           });
-          console.log("Document written with ID: ", docRef.id);
+          console.log("Document written with ID: ", docRef);
         })
         .catch((e) => {
           console.log(e);
@@ -77,7 +77,7 @@ const Crimereport = () => {
       date: "",
       city: "",
       imageUrl: "",
-      complain:"",
+      crime:"",
       
     }));
     // navigate('/complaint');
@@ -144,16 +144,37 @@ const Crimereport = () => {
           <Input
             required={true}
             type="text"
-          placeholder="Write Complain here.."
-            value={crimeDetail.complain}
+          placeholder="Write Crime here.."
+            value={crimeDetail.crime}
             onChange={(value) => {
               setCrimeDetail((prev) => ({
                 ...prev,
-                complain: value,
+                crime: value,
               }));
             }}
           />
-        
+          <select 
+    value={crimeDetail.city}
+    onChange={(e) => {
+      setCrimeDetail((prev) => ({
+        ...prev,
+        city: e.target.value,
+      }));
+    }}
+    >
+            <option value="">Select city</option>
+      <option value="NewYork">New York</option>
+      <option value="California">California </option>
+      <option value="Alaska">Alaska </option>
+      <option value="Arizona">Arizona</option>
+      <option value="NewJersey">New Jersey</option>
+      <option value="Colorado">Colorado </option>
+      <option value="Florida">Florida </option>
+      <option value="Georgia">Georgia </option>
+      <option value="Hawaii">Hawaii</option>
+      <option value="NewMexico">New Mexico</option>
+</select>
+        <br/>
         
         <Button type="submit" title="REGISTER" />
       </form>

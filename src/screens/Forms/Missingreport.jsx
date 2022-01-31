@@ -137,6 +137,20 @@ const Missingreport = () => {
             }));
           }}
         />
+
+        <select
+        value={missingDetail.gender}
+        onChange={(e) => {
+          setMissingDetail((prev) => ({
+            ...prev,
+            gender: e.target.value,
+          }));
+        }}>
+        <option value="">Gender</option>
+      <option value="male">Male</option>
+      <option value="Female">Female</option>
+        </select>
+
         <Input
           required={true}
           placeholder="Missing Person Details"
@@ -184,6 +198,28 @@ const Missingreport = () => {
               }));
             }}
           />
+          <select 
+    value={missingDetail.city}
+    onChange={(e) => {
+      setMissingDetail((prev) => ({
+        ...prev,
+        city: e.target.value,
+      }));
+    }}
+    >
+            <option value="">Select city</option>
+      <option value="NewYork">New York</option>
+      <option value="California">California </option>
+      <option value="Alaska">Alaska </option>
+      <option value="Arizona">Arizona</option>
+      <option value="NewJersey">New Jersey</option>
+      <option value="Colorado">Colorado </option>
+      <option value="Florida">Florida </option>
+      <option value="Georgia">Georgia </option>
+      <option value="Hawaii">Hawaii</option>
+      <option value="NewMexico">New Mexico</option>
+</select>
+          <br/>
         <Button type="submit" title="REGISTER" />
       </form>
     </div>

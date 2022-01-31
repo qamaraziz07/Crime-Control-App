@@ -6,6 +6,7 @@ const InputImage = ({ title, error, onChange, value, ...props }) => {
       <div>
       <label> {value ? (<img src={URL.createObjectURL(value)} alt="" width="150" />) : ("No file chosen")}
         <input
+        
           {...props}
           style={{
             ...props.style,

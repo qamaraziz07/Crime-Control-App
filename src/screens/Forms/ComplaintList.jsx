@@ -46,6 +46,9 @@ const ComplaintList = () => {
               Name: <b> {complain.name}</b>
             </p>
             <p>
+              City: <b> {complain.city}</b>
+            </p>
+            <p>
               Crime: <b>{complain.complain}</b>
             </p>
             <p>

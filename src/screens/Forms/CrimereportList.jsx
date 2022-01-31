@@ -5,7 +5,7 @@ import NavbarDash from "../../Components/Navbar/NavbarDash"
 import NavbarCrime from "../../Components/Navbar/NavbarCrime"
 
 const CrimereportList = () => {
-  const [crime, setCrime] = useState([]);
+  const [crimes, setCrime] = useState([]);
 
   useEffect(() => {
     onSnapshot(collection(db, "Crimes"), (snapshot) => {
@@ -25,26 +25,29 @@ const CrimereportList = () => {
     <div className="patientsList">
       <h1>Crime List </h1>
   
-      {crime?.map((complain, ind) => {
+      {crimes?.map((crime, ind) => {
         return (
           <div className="patientDetail" key={ind}>
             <img
               className="center"
-              src={complain.imageUrl}
+              src={crime.imageUrl}
               alt="file"
               width={200}
             />
             <p>
-              Date of Complaint: <b> {complain.date}</b>
+              Date of Crime: <b> {crime.date}</b>
             </p>
             <p>
-              Name: <b> {complain.name}</b>
+              Name: <b> {crime.name}</b>
             </p>
             <p>
-              Crime: <b>{complain.complain}</b>
+              City: <b>{crime.city}</b>
             </p>
             <p>
-             Informer Mobile: <b>{complain.phone}</b>
+              Crime: <b>{crime.crime}</b>
+            </p>
+            <p>
+             Informer Mobile: <b>{crime.phone}</b>
             </p>
           </div>
         );

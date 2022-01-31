@@ -44,7 +44,13 @@ const MissingpersonList = () => {
               Age:<b>{mising.age}</b>
             </p>
             <p>
-              Details: <b>{mising.missDtl}</b>
+              Gender:<b>{mising.gender}</b>
+            </p>
+            <p>
+             Missing Details: <b>{mising.missDtl}</b>
+            </p>
+            <p>
+              City:<b>{mising.city}</b>
             </p>
             <p>
               Informer Name: <b>{mising.InfName}</b>
