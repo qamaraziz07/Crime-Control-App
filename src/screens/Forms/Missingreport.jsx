@@ -9,6 +9,12 @@ import NavbarDash from '../../Components/Navbar/NavbarDash';
 import NavbarMissing from '../../Components/Navbar/NavbarMissing';
 
 const Missingreport = () => {
+  
+  const  data=JSON.parse(localStorage.getItem('user'));
+
+  console.log(data.uid);
+  const missingId=`${data.uid}_${Date.now()}`;
+
   const [image, setImage] = useState("");
   const [missingDetail, setMissingDetail] = useState({
     name: "",
@@ -19,6 +25,7 @@ const Missingreport = () => {
     date: "",
     city: "",
     gender:"",
+    missingId:missingId,
   });
 
 
@@ -58,6 +65,7 @@ const Missingreport = () => {
     e.preventDefault();
 
     try {
+     
       await fileUpload()
         .then((data) => {
           console.log(data);
@@ -84,8 +92,10 @@ const Missingreport = () => {
       city: "",
       gender:"",
       imageUrl: "",
+      missingId:"",
       
     }));
+    setImage(null)
     // navigate('/complaint');
     alert("Missing Report Registered..")
   };

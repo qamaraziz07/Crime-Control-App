@@ -9,6 +9,15 @@ import NavbarCrime from '../../Components/Navbar/NavbarCrime';
 import NavbarDash from '../../Components/Navbar/NavbarDash';
 
 const Crimereport = () => {
+
+  // const [user, setUser] = useState(localStorage.getItem("user"));
+  // console.log(user.uid);
+  const  data=JSON.parse(localStorage.getItem('user'));
+
+  console.log(data.uid);
+  const crimeId=`${data.uid}_${Date.now()}`;
+
+
   const [image, setImage] = useState("");
   const [crimeDetail, setCrimeDetail] = useState({
     name: "",
@@ -16,6 +25,7 @@ const Crimereport = () => {
     date: "",
     city: "",
     crime:"",
+    crimeId:crimeId,
   });
 
 
@@ -78,8 +88,11 @@ const Crimereport = () => {
       city: "",
       imageUrl: "",
       crime:"",
+      crimeId:"",
       
     }));
+    setImage(null)
+
     // navigate('/complaint');
     alert("Crime Report Registered..")
   };

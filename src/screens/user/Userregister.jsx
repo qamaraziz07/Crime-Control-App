@@ -3,13 +3,15 @@ import {
   sendEmailVerification,
 } from "firebase/auth";
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate ,useParams } from "react-router";
 import Button from "../../Components/Button";
 import Input from "../../Components/Input";
 import Navbar from "../../Components/Navbar/NavbarHome";
 import { auth } from "../../firebase";
 
 const RegisterUser = () => {
+  const {id}=useParams();
+  console.log({id});
   const navigate = useNavigate();
 
 
@@ -29,16 +31,20 @@ const RegisterUser = () => {
         user.password
       );
       await sendEmailVerification(auth.currentUser);
-      const userID = userCredential.user.uid;
-      console.log(userID);
+      const {uid,email,accessToken} = userCredential.user;
+      const data={uid,email,accessToken}
+      console.log({data});
+      localStorage.setItem('user',JSON.stringify(data))
+
       navigate('/login');
+      console.log({uid});
       console.log(userCredential);
     } catch (error) {
       console.log(error.message);
     }
   };
   function handleClick() {
-    navigate("/login");
+    navigate('/login');
   }
   return (
     <>

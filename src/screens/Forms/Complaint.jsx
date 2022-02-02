@@ -9,7 +9,9 @@ import NavbarDash from '../../Components/Navbar/NavbarDash';
 import NavbarComplaint from "../../Components/Navbar/NavbarComplaint"
 
 const Complaint = () => {
-
+  const  data=JSON.parse(localStorage.getItem('user'));
+     console.log(data.uid);
+     const complainId=`${data.uid}_${Date.now()}`;
 
   const [image, setImage] = useState("");
   const [complaintDetail, setComplaintDetail] = useState({
@@ -18,9 +20,10 @@ const Complaint = () => {
     date: "",
     city: "",
     complain:"",
+    complainId:complainId,
   });
 
-console.log({complaintDetail});
+// console.log({complaintDetail});
   const fileUpload = async () => {
     return new Promise((resolve, reject) => {
       const fileRef = ref(storage, `Images/${Date.now() + image.name}`);
@@ -57,6 +60,7 @@ console.log({complaintDetail});
     e.preventDefault();
 
     try {
+    
       await fileUpload()
         .then((data) => {
           console.log(data);
@@ -64,7 +68,7 @@ console.log({complaintDetail});
             ...complaintDetail,
             imageUrl: data,
           });
-          console.log("Document written with ID: ", docRef);
+          console.log("Document written with ID: ", docRef.id);
         })
         .catch((e) => {
           console.log(e);
@@ -80,9 +84,13 @@ console.log({complaintDetail});
       city: "",
       imageUrl: "",
       complain:"",
+      complainId:"",
       
     }));
-    alert("Complaint Registered..")
+    setImage(null)
+    // navigate(`/complaintlist/${complainId}`);
+  
+    alert("complaint Submitted...")
   };
 
   return (<>

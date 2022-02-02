@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router";
+import { useNavigate ,useParams } from "react-router";
 import Input from "../../Components/Input";
 import { auth } from "../../firebase";
 import Button from "../../Components/Button";
 import Navbar from "../../Components/Navbar/NavbarHome";
 
 const Userlogin = () => {
+ const {id}=useParams();
+ console.log({id});
   const navigate = useNavigate();
   const [user, setUser] = useState({
     email: "",
@@ -21,8 +23,13 @@ const Userlogin = () => {
         user.email,
         user.password
       );
-      const userID = userCredential.user.uid;
-      console.log(userID);
+      const {uid,email,accessToken} = userCredential.user;
+      console.log({uid,accessToken,email});
+      const data={uid,email,accessToken}
+      console.log({data});
+      localStorage.setItem('user',JSON.stringify(data))
+      
+
       navigate('/dashboard');
       console.log(userCredential);
     } catch (error) {
@@ -30,7 +37,7 @@ const Userlogin = () => {
     }
   };
   function handleClick() {
-    navigate("/signup");
+    navigate(`/signup/${id}`);
   }
   return (<>
     <Navbar/>

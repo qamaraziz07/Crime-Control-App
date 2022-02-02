@@ -109,7 +109,7 @@ nav ul li a:hover {
 }
 
 .btn {
-  width: 30%;
+  /* width: 30%; */
   margin: 10px;
   height: 35%;
   font-size: large;
@@ -167,5 +167,10 @@ nav ul li a:hover {
 .singlemissing {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+.crd{
+  display: flex;
+  justify-content: center;
   align-items: center;
 }

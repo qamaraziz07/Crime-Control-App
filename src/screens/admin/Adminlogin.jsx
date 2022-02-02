@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import Button from '../../Components/Button';
 import Input from "../../Components/Input";
 import {useNavigate} from 'react-router'
+import Navbar  from '../../Components/Navbar/NavbarHome';
 const Adminlogin = () => {
   const navigate = useNavigate();
   const [admin, setAdmin] = useState({
@@ -20,7 +21,9 @@ const Adminlogin = () => {
   };
 
 
-  return <div className='form'>
+  return <>
+    <Navbar/>
+  <div className='form'>
     <h1>Admin Login</h1>
     <form onSubmit={handleSubmit}>
       <Input
@@ -50,6 +53,7 @@ const Adminlogin = () => {
           <Button  type="submit" title="Login" />
     </form>
   </div>;
+  </>
 };
 
 export default Adminlogin;

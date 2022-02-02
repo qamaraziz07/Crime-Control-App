@@ -1,11 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-
-const NavbarDash = () => {
-
-  return (
-    <>
+const NavbarAdmin = () => {
+    return <div>
+      <>
     <div className="nav">
     <div className="logo">
       Reporting App
@@ -22,7 +20,7 @@ const NavbarDash = () => {
         <Link to="/missingreport">MISSING PERSONS</Link>
       </li>
       <li>
-        <Link to="/complaint">COMPLAINT </Link>
+        <Link to="/complaint">COMPLAINT</Link>
       </li>
        <li>
         <Link to="/">LOGOUT</Link>
@@ -31,8 +29,7 @@ const NavbarDash = () => {
     </nav>
     </div>
     </>
-
-  );
+  </div>
 };
 
-export default NavbarDash;
+export default NavbarAdmin;
